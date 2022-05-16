@@ -2,7 +2,7 @@ import { HeaderText, Link, SubheaderText } from 'components/Text'
 import ListOfContracts from 'components/ListOfContracts'
 import SuspenseWithError from 'components/SuspenseWithError'
 
-export default function MainBlock() {
+export default function () {
   return (
     <>
       <HeaderText>BWL Minting Experience</HeaderText>
