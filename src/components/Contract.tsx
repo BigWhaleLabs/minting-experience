@@ -46,7 +46,7 @@ export default function ({ address }: { address: string }) {
       <Button
         title={
           isDosuInvites
-            ? 'Visite Dosu Invites'
+            ? 'Mint'
             : !account
             ? 'Connect wallet'
             : accountOwnsContract
