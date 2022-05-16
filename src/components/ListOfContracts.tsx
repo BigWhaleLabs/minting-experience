@@ -1,7 +1,9 @@
+import { lazy } from 'react'
 import { useSnapshot } from 'valtio'
-import Contract from 'components/Contract'
 import SealCredStore from 'stores/SealCredStore'
 import classnames, { display, flexDirection, space } from 'classnames/tailwind'
+
+const Contract = lazy(() => import('components/Contract'))
 
 const contractList = classnames(
   display('flex'),

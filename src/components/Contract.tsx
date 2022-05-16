@@ -1,4 +1,3 @@
-import { ContractTransaction } from 'ethers'
 import { SimpleERC721__factory } from '@big-whale-labs/simple-erc721'
 import { SubheaderText } from 'components/Text'
 import { handleError } from 'helpers/handleError'
