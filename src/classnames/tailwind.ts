@@ -55,9 +55,6 @@ export type TBackgroundColor =
   | 'bg-current'
   | 'bg-transparent'
   | 'bg-black-background'
-  | 'bg-black-background-purpose'
-  | 'bg-black-perk-gradient-light'
-  | 'bg-black-perk-gradient-dark'
   | 'bg-white'
   | 'bg-slate-50'
   | 'bg-slate-100'
@@ -279,8 +276,6 @@ export type TBackgroundColor =
   | 'bg-rose-700'
   | 'bg-rose-800'
   | 'bg-rose-900'
-  | 'bg-gold-dark'
-  | 'bg-gold-light'
 
 export type TBackgroundPosition =
   | 'bg-bottom'
@@ -319,15 +314,6 @@ export type TGradientColorStops =
   | 'from-black-background'
   | 'via-black-background'
   | 'to-black-background'
-  | 'from-black-background-purpose'
-  | 'via-black-background-purpose'
-  | 'to-black-background-purpose'
-  | 'from-black-perk-gradient-light'
-  | 'via-black-perk-gradient-light'
-  | 'to-black-perk-gradient-light'
-  | 'from-black-perk-gradient-dark'
-  | 'via-black-perk-gradient-dark'
-  | 'to-black-perk-gradient-dark'
   | 'from-white'
   | 'via-white'
   | 'to-white'
@@ -991,12 +977,6 @@ export type TGradientColorStops =
   | 'from-rose-900'
   | 'via-rose-900'
   | 'to-rose-900'
-  | 'from-gold-dark'
-  | 'via-gold-dark'
-  | 'to-gold-dark'
-  | 'from-gold-light'
-  | 'via-gold-light'
-  | 'to-gold-light'
 
 export type TBackgrounds =
   | TBackgroundAttachment
@@ -1056,27 +1036,6 @@ export type TBorderColor =
   | 'border-l-black-background'
   | 'border-x-black-background'
   | 'border-y-black-background'
-  | 'border-black-background-purpose'
-  | 'border-t-black-background-purpose'
-  | 'border-r-black-background-purpose'
-  | 'border-b-black-background-purpose'
-  | 'border-l-black-background-purpose'
-  | 'border-x-black-background-purpose'
-  | 'border-y-black-background-purpose'
-  | 'border-black-perk-gradient-light'
-  | 'border-t-black-perk-gradient-light'
-  | 'border-r-black-perk-gradient-light'
-  | 'border-b-black-perk-gradient-light'
-  | 'border-l-black-perk-gradient-light'
-  | 'border-x-black-perk-gradient-light'
-  | 'border-y-black-perk-gradient-light'
-  | 'border-black-perk-gradient-dark'
-  | 'border-t-black-perk-gradient-dark'
-  | 'border-r-black-perk-gradient-dark'
-  | 'border-b-black-perk-gradient-dark'
-  | 'border-l-black-perk-gradient-dark'
-  | 'border-x-black-perk-gradient-dark'
-  | 'border-y-black-perk-gradient-dark'
   | 'border-white'
   | 'border-t-white'
   | 'border-r-white'
@@ -2622,11 +2581,6 @@ export type TBorderColor =
   | 'border-l-rose-900'
   | 'border-x-rose-900'
   | 'border-y-rose-900'
-  | 'border-gold'
-  | 'border-t-gold'
-  | 'border-r-gold'
-  | 'border-b-gold'
-  | 'border-l-gold'
 
 export type TBorderOpacity =
   | 'border-opacity-0'
@@ -2727,15 +2681,6 @@ export type TBorderRadius =
   | 'rounded-br-full'
   | 'rounded-bl-full'
   | 'rounded-full'
-  | 'rounded-t-avatar'
-  | 'rounded-r-avatar'
-  | 'rounded-b-avatar'
-  | 'rounded-l-avatar'
-  | 'rounded-tr-avatar'
-  | 'rounded-tl-avatar'
-  | 'rounded-br-avatar'
-  | 'rounded-bl-avatar'
-  | 'rounded-avatar'
 
 export type TBorderWidth =
   | 'border-t-0'
@@ -3038,9 +2983,6 @@ export type TRingColor =
   | 'ring-transparent'
   | 'ring-black'
   | 'ring-white-background'
-  | 'ring-white-background-purpose'
-  | 'ring-white-perk-gradient-light'
-  | 'ring-white-perk-gradient-dark'
   | 'ring-slate'
   | 'ring-gray-50'
   | 'ring-gray-100'
@@ -3252,16 +3194,6 @@ export type TRingColor =
   | 'ring-rose-700'
   | 'ring-rose-800'
   | 'ring-rose-900'
-  | 'ring-gold-50'
-  | 'ring-gold-100'
-  | 'ring-gold-200'
-  | 'ring-gold-300'
-  | 'ring-gold-400'
-  | 'ring-gold-500'
-  | 'ring-gold-600'
-  | 'ring-gold-700'
-  | 'ring-gold-800'
-  | 'ring-gold-900'
 
 export type TRingWidth =
   | 'ring-0'
@@ -3270,7 +3202,7 @@ export type TRingWidth =
   | 'ring-4'
   | 'ring-8'
   | 'ring'
-  | 'inset'
+  | 'ring-inset'
 
 export type TRingOpacity =
   | 'ring-opacity-0'
@@ -3295,9 +3227,6 @@ export type TRingOffsetColor =
   | 'ring-offset-current'
   | 'ring-offset-transparent'
   | 'ring-offset-black-background'
-  | 'ring-offset-black-background-purpose'
-  | 'ring-offset-black-perk-gradient-light'
-  | 'ring-offset-black-perk-gradient-dark'
   | 'ring-offset-white'
   | 'ring-offset-slate-50'
   | 'ring-offset-slate-100'
@@ -3519,8 +3448,6 @@ export type TRingOffsetColor =
   | 'ring-offset-rose-700'
   | 'ring-offset-rose-800'
   | 'ring-offset-rose-900'
-  | 'ring-offset-gold-dark'
-  | 'ring-offset-gold-light'
 
 export type TRingOffsetWidth =
   | 'ring-offset-0'
@@ -3548,9 +3475,6 @@ export type TOutlineColor =
   | 'outline-current'
   | 'outline-transparent'
   | 'outline-black-background'
-  | 'outline-black-background-purpose'
-  | 'outline-black-perk-gradient-light'
-  | 'outline-black-perk-gradient-dark'
   | 'outline-white'
   | 'outline-slate-50'
   | 'outline-slate-100'
@@ -3772,8 +3696,6 @@ export type TOutlineColor =
   | 'outline-rose-700'
   | 'outline-rose-800'
   | 'outline-rose-900'
-  | 'outline-gold-dark'
-  | 'outline-gold-light'
 
 export type TBorders =
   | TBorderStyle
@@ -3852,9 +3774,6 @@ export type TBoxShadowColor =
   | 'shadow-current'
   | 'shadow-transparent'
   | 'shadow-black-background'
-  | 'shadow-black-background-purpose'
-  | 'shadow-black-perk-gradient-light'
-  | 'shadow-black-perk-gradient-dark'
   | 'shadow-white'
   | 'shadow-slate-50'
   | 'shadow-slate-100'
@@ -4076,8 +3995,6 @@ export type TBoxShadowColor =
   | 'shadow-rose-700'
   | 'shadow-rose-800'
   | 'shadow-rose-900'
-  | 'shadow-gold-dark'
-  | 'shadow-gold-light'
 
 export type TOpacity =
   | 'opacity-0'
@@ -5395,9 +5312,6 @@ export type TCaretColor =
   | 'caret-current'
   | 'caret-transparent'
   | 'caret-black-background'
-  | 'caret-black-background-purpose'
-  | 'caret-black-perk-gradient-light'
-  | 'caret-black-perk-gradient-dark'
   | 'caret-white'
   | 'caret-slate-50'
   | 'caret-slate-100'
@@ -5619,8 +5533,6 @@ export type TCaretColor =
   | 'caret-rose-700'
   | 'caret-rose-800'
   | 'caret-rose-900'
-  | 'caret-gold-dark'
-  | 'caret-gold-light'
 
 export type TWillChange =
   | 'will-change-auto'
@@ -5633,9 +5545,6 @@ export type TAccentColor =
   | 'accent-current'
   | 'accent-transparent'
   | 'accent-black-background'
-  | 'accent-black-background-purpose'
-  | 'accent-black-perk-gradient-light'
-  | 'accent-black-perk-gradient-dark'
   | 'accent-white'
   | 'accent-slate-50'
   | 'accent-slate-100'
@@ -5858,8 +5767,6 @@ export type TAccentColor =
   | 'accent-rose-800'
   | 'accent-rose-900'
   | 'accent-auto'
-  | 'accent-gold-dark'
-  | 'accent-gold-light'
 
 export type TScrollPadding =
   | 'scroll-p-0'
@@ -6908,9 +6815,6 @@ export type TWidth =
   | 'w-min'
   | 'w-max'
   | 'w-fit'
-  | 'w-chart'
-  | 'w-time'
-  | 'w-glass'
 
 export type TMinWidth =
   | 'min-w-0'
@@ -7088,7 +6992,6 @@ export type TFill =
   | 'fill-fuchsia'
   | 'fill-pink'
   | 'fill-rose'
-  | 'fill-gold'
 
 export type TStroke =
   | 'stroke-inherit'
@@ -7118,7 +7021,6 @@ export type TStroke =
   | 'stroke-fuchsia'
   | 'stroke-pink'
   | 'stroke-rose'
-  | 'stroke-gold'
 
 export type TStrokeWidth = 'stroke-0' | 'stroke-1' | 'stroke-2'
 
@@ -7406,9 +7308,6 @@ export type TPlaceholderColor =
   | 'placeholder-current'
   | 'placeholder-transparent'
   | 'placeholder-black-background'
-  | 'placeholder-black-background-purpose'
-  | 'placeholder-black-perk-gradient-light'
-  | 'placeholder-black-perk-gradient-dark'
   | 'placeholder-white'
   | 'placeholder-slate-50'
   | 'placeholder-slate-100'
@@ -7630,8 +7529,6 @@ export type TPlaceholderColor =
   | 'placeholder-rose-700'
   | 'placeholder-rose-800'
   | 'placeholder-rose-900'
-  | 'placeholder-gold-dark'
-  | 'placeholder-gold-light'
 
 export type TPlaceholderOpacity =
   | 'placeholder-opacity-0'
@@ -7655,9 +7552,6 @@ export type TTextColor =
   | 'text-current'
   | 'text-transparent'
   | 'text-black-background'
-  | 'text-black-background-purpose'
-  | 'text-black-perk-gradient-light'
-  | 'text-black-perk-gradient-dark'
   | 'text-white'
   | 'text-slate-50'
   | 'text-slate-100'
@@ -7879,8 +7773,6 @@ export type TTextColor =
   | 'text-rose-700'
   | 'text-rose-800'
   | 'text-rose-900'
-  | 'text-gold-dark'
-  | 'text-gold-light'
 
 export type TTextOpacity =
   | 'text-opacity-0'
@@ -7943,9 +7835,6 @@ export type TTextDecorationColor =
   | 'decoration-current'
   | 'decoration-transparent'
   | 'decoration-black-background'
-  | 'decoration-black-background-purpose'
-  | 'decoration-black-perk-gradient-light'
-  | 'decoration-black-perk-gradient-dark'
   | 'decoration-white'
   | 'decoration-slate-50'
   | 'decoration-slate-100'
@@ -8167,8 +8056,6 @@ export type TTextDecorationColor =
   | 'decoration-rose-700'
   | 'decoration-rose-800'
   | 'decoration-rose-900'
-  | 'decoration-gold-dark'
-  | 'decoration-gold-light'
 
 export type TTextDecorationThickness =
   | 'decoration-0'
@@ -8262,6 +8149,8 @@ export type TPseudoClassVariants =
   | 'file:'
   | 'placeholder:'
   | 'print:'
+  | 'ltr:'
+  | 'rtl:'
   | 'sm:'
   | 'md:'
   | 'lg:'
