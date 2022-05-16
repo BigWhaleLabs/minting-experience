@@ -45,16 +45,22 @@ export default function ({ address }: { address: string }) {
       </SubheaderText>
       <Button
         title={
-          !account ? 'Connect wallet' : accountOwnsContract ? 'Owned' : 'Mint'
+          isDosuInvites
+            ? 'Visite Dosu Invites'
+            : !account
+            ? 'Connect wallet'
+            : accountOwnsContract
+            ? 'Owned'
+            : 'Mint'
         }
         disabled={accountOwnsContract}
         loading={loading}
         onClick={async () => {
-          if (!WalletStore.account) {
-            return WalletStore.connect()
-          }
           if (isDosuInvites) {
             return window.open('https://invites.dosu.io', '_blank')
+          }
+          if (!WalletStore.account) {
+            return WalletStore.connect()
           }
           setLoading(true)
           try {
