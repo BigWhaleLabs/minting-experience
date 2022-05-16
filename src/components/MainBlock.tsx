@@ -1,4 +1,5 @@
 import { HeaderText, Link, SubheaderText } from 'components/Text'
+import Account from 'components/Account'
 import ListOfContracts from 'components/ListOfContracts'
 import SuspenseWithError from 'components/SuspenseWithError'
 
@@ -11,6 +12,7 @@ export default function () {
         below, they're all supported by{' '}
         <Link url="https://sealcred.xyz">SealCred</Link>!
       </SubheaderText>
+      <Account />
       <SuspenseWithError
         error="Error fetching ledger!"
         loadingText="Please, wait while I'm loading the contracts..."

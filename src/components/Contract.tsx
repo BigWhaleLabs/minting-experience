@@ -1,5 +1,76 @@
-import { BodyText } from 'components/Text'
+import { ContractTransaction } from 'ethers'
+import { SubheaderText } from 'components/Text'
+import { handleError } from 'helpers/handleError'
+import { useSnapshot } from 'valtio'
+import { useState } from 'react'
+import Button from 'components/Button'
+import ContractName from 'components/ContractName'
+import SealCredStore from 'stores/SealCredStore'
+import WalletStore from 'stores/WalletStore'
+import classnames, {
+  alignItems,
+  borderColor,
+  borderRadius,
+  borderWidth,
+  display,
+  flexDirection,
+  justifyContent,
+  padding,
+} from 'classnames/tailwind'
+import env from 'helpers/env'
+
+const container = classnames(
+  display('flex'),
+  flexDirection('flex-row'),
+  justifyContent('justify-between'),
+  alignItems('items-center'),
+  borderWidth('border'),
+  borderColor('border-blue-500'),
+  borderRadius('rounded'),
+  padding('p-2')
+)
 
 export default function ({ address }: { address: string }) {
-  return <BodyText>{address}</BodyText>
+  const { account } = useSnapshot(WalletStore)
+  const { originalContractsToOwnersMaps } = useSnapshot(SealCredStore)
+  const owners = Object.values(originalContractsToOwnersMaps[address])
+  const accountOwnsContract = !!account && owners.includes(account)
+  const isDosuInvites = env.VITE_DOSU_INVITES_ADDRESS === address
+  const [loading, setLoading] = useState(false)
+
+  return (
+    <div className={container}>
+      <SubheaderText>
+        <ContractName address={address} />
+      </SubheaderText>
+      <Button
+        title={
+          !account ? 'Connect wallet' : accountOwnsContract ? 'Owned' : 'Mint'
+        }
+        disabled={accountOwnsContract}
+        loading={loading}
+        onClick={async () => {
+          if (!WalletStore.account) {
+            return WalletStore.connect()
+          }
+          if (isDosuInvites) {
+            return window.open('https://invites.dosu.io', '_blank')
+          }
+          setLoading(true)
+          try {
+            const ledger = await SealCredStore.ledger
+            const ledgerRecord = ledger[address]
+            if (!ledgerRecord) throw new Error('Contract not found')
+            const { originalContract } = ledgerRecord
+            const tx = await originalContract.mint()
+            await tx.wait()
+          } catch (error) {
+            handleError(error)
+          } finally {
+            setLoading(false)
+          }
+        }}
+      />
+    </div>
+  )
 }

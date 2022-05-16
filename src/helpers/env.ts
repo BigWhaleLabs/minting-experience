@@ -7,4 +7,6 @@ export default {
   VITE_SC_LEDGER_CONTRACT_ADDRESS: import.meta.env
     .VITE_SC_LEDGER_CONTRACT_ADDRESS as string,
   VITE_ENCRYPT_KEY: import.meta.env.VITE_ENCRYPT_KEY as string,
+  VITE_DOSU_INVITES_ADDRESS: import.meta.env
+    .VITE_DOSU_INVITES_ADDRESS as string,
 }

@@ -33,7 +33,7 @@ const button = (disabled?: boolean, loading?: boolean) =>
       'bg-transparent',
       disabled ? undefined : 'hover:bg-blue-500'
     ),
-    textColor('text-blue-700', disabled ? undefined : 'hover:text-white'),
+    textColor('text-blue-500', disabled ? undefined : 'hover:text-white'),
     fontWeight('font-semibold'),
     padding('py-2', 'px-4'),
     borderWidth('border'),
