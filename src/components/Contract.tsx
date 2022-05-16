@@ -1,4 +1,5 @@
 import { ContractTransaction } from 'ethers'
+import { SimpleERC721__factory } from '@big-whale-labs/simple-erc721'
 import { SubheaderText } from 'components/Text'
 import { handleError } from 'helpers/handleError'
 import { useSnapshot } from 'valtio'
@@ -62,7 +63,12 @@ export default function ({ address }: { address: string }) {
             const ledgerRecord = ledger[address]
             if (!ledgerRecord) throw new Error('Contract not found')
             const { originalContract } = ledgerRecord
-            const tx = await originalContract.mint()
+            if (!WalletStore.provider) throw new Error('No provider found')
+            const contractWithSigner = SimpleERC721__factory.connect(
+              originalContract.address,
+              WalletStore.provider.getSigner(0)
+            )
+            const tx = await contractWithSigner.mint()
             await tx.wait()
           } catch (error) {
             handleError(error)

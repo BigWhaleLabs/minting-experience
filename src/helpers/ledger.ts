@@ -1,7 +1,5 @@
-import {
-  ERC721__factory,
-  SealCredLedger,
-} from '@big-whale-labs/seal-cred-ledger-contract'
+import { SealCredLedger } from '@big-whale-labs/seal-cred-ledger-contract'
+import { SimpleERC721__factory } from '@big-whale-labs/simple-erc721'
 import Ledger from 'models/Ledger'
 import LedgerRecord from 'models/LedgerRecord'
 import defaultProvider from 'helpers/defaultProvider'
@@ -10,7 +8,10 @@ import queryBlockLimit from 'helpers/queryBlockLimit'
 export function getLedgerRecord(tokenAddress: string, merkleRoot: string) {
   return {
     merkleRoot,
-    originalContract: ERC721__factory.connect(tokenAddress, defaultProvider),
+    originalContract: SimpleERC721__factory.connect(
+      tokenAddress,
+      defaultProvider
+    ),
   } as LedgerRecord
 }
 

@@ -4,11 +4,10 @@ import { proxy } from 'valtio'
 import env from 'helpers/env'
 import web3Modal from 'helpers/web3Modal'
 
-let provider: Web3Provider
-
 class WalletStore {
   account?: string
   walletLoading = false
+  provider?: Web3Provider
 
   get cachedProvider() {
     return web3Modal.cachedProvider
@@ -20,8 +19,8 @@ class WalletStore {
       if (clearCachedProvider) web3Modal.clearCachedProvider()
 
       const instance = await web3Modal.connect()
-      provider = new Web3Provider(instance)
-      const userNetwork = (await provider.getNetwork()).name
+      this.provider = new Web3Provider(instance)
+      const userNetwork = (await this.provider.getNetwork()).name
       if (userNetwork !== env.VITE_ETH_NETWORK && env.VITE_ETH_NETWORK)
         throw new Error(
           ErrorList.wrongNetwork(userNetwork, env.VITE_ETH_NETWORK)
@@ -39,10 +38,10 @@ class WalletStore {
   }
 
   private async handleAccountChanged() {
-    if (!provider) return
+    if (!this.provider) return
 
     this.walletLoading = true
-    const accounts = await provider.listAccounts()
+    const accounts = await this.provider.listAccounts()
     this.account = accounts[0]
     this.walletLoading = false
   }
