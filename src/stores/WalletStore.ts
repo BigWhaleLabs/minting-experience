@@ -53,15 +53,13 @@ class WalletStore {
       handleError(error)
     })
 
-    provider.on('accountsChanged', () => {
-      void this.handleAccountChanged()
+    provider.on('accountsChanged', async (accounts: string[]) => {
+      accounts.length ? await this.handleAccountChanged() : this.clearData()
     })
-    provider.on('disconnect', () => {
-      void this.handleAccountChanged()
-    })
-
-    provider.on('stop', () => {
-      void this.handleAccountChanged()
+    provider.on('disconnect', (error: unknown) => {
+      if (provider) provider.removeAllListeners()
+      handleError(error)
+      this.clearData()
     })
     provider.on('chainChanged', async () => {
       this.account = undefined
