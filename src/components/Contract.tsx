@@ -43,7 +43,7 @@ export default function ({ address }: { address: string }) {
   const { originalContractsToOwnersMaps } = useSnapshot(SealCredStore)
   const owners = Object.values(originalContractsToOwnersMaps[address])
   const accountOwnsContract = !!account && owners.includes(account)
-  const isDosuInvites = env.VITE_DOSU_INVITES_ADDRESS === address
+  const isDosuInvites = env.VITE_DOSU_INVITES_CONTRACT_ADDRESS === address
   const [loading, setLoading] = useState(false)
 
   return (
