@@ -4,13 +4,18 @@ import { proxy } from 'valtio'
 import env from 'helpers/env'
 import web3Modal from 'helpers/web3Modal'
 
+let provider: Web3Provider
+
 class WalletStore {
   account?: string
   walletLoading = false
-  provider?: Web3Provider
 
   get cachedProvider() {
     return web3Modal.cachedProvider
+  }
+
+  get provider() {
+    return provider
   }
 
   async connect(clearCachedProvider = false) {
@@ -19,13 +24,13 @@ class WalletStore {
       if (clearCachedProvider) web3Modal.clearCachedProvider()
 
       const instance = await web3Modal.connect()
-      this.provider = new Web3Provider(instance)
-      const userNetwork = (await this.provider.getNetwork()).name
+      provider = new Web3Provider(instance)
+      const userNetwork = (await provider.getNetwork()).name
       if (userNetwork !== env.VITE_ETH_NETWORK && env.VITE_ETH_NETWORK)
         throw new Error(
           ErrorList.wrongNetwork(userNetwork, env.VITE_ETH_NETWORK)
         )
-      await this.handleAccountChanged()
+      this.account = (await provider.listAccounts())[0]
       this.subscribeProvider(instance)
     } catch (error) {
       if (error !== 'Modal closed by user') {
@@ -38,10 +43,10 @@ class WalletStore {
   }
 
   private async handleAccountChanged() {
-    if (!this.provider) return
+    if (!provider) return
 
     this.walletLoading = true
-    const accounts = await this.provider.listAccounts()
+    const accounts = await provider.listAccounts()
     this.account = accounts[0]
     this.walletLoading = false
   }
@@ -53,8 +58,8 @@ class WalletStore {
       handleError(error)
     })
 
-    provider.on('accountsChanged', async (accounts: string[]) => {
-      accounts.length ? await this.handleAccountChanged() : this.clearData()
+    provider.on('accountsChanged', (accounts: string[]) => {
+      accounts.length ? void this.handleAccountChanged() : this.clearData()
     })
     provider.on('disconnect', (error: unknown) => {
       if (provider) provider.removeAllListeners()

@@ -3,17 +3,12 @@ import {
   animation,
   classnames,
   height,
-  margin,
   opacity,
   textColor,
   width,
 } from 'classnames/tailwind'
 
-const loader = classnames(
-  animation('animate-spin'),
-  textColor('text-blue-500'),
-  margin('mr-2')
-)
+const loader = classnames(animation('animate-spin'), textColor('text-blue-500'))
 const icon = classnames(loader, width('w-5'), height('h-5'))
 
 const Spinner: FC = () => {

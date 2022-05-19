@@ -10,16 +10,19 @@ import {
   display,
   flexDirection,
   fontWeight,
+  justifyContent,
+  margin,
   opacity,
   outlineStyle,
   padding,
+  space,
   textColor,
 } from 'classnames/tailwind'
 import Spinner from 'components/Spinner'
 
 type ButtonProps = {
-  onClick: () => void
-  title: string
+  onClick?: () => void
+  title?: string
   disabled?: boolean
   loading?: boolean
 }
@@ -28,6 +31,7 @@ const button = (disabled?: boolean, loading?: boolean) =>
   classnames(
     display('flex'),
     flexDirection('flex-row'),
+    justifyContent('justify-center'),
     alignItems('items-center'),
     backgroundColor(
       'bg-transparent',
@@ -46,6 +50,7 @@ const button = (disabled?: boolean, loading?: boolean) =>
     disabled || loading ? opacity('opacity-50') : undefined,
     disabled || loading ? cursor('cursor-not-allowed') : undefined
   )
+const spinnerContainer = (title?: string) => margin(title ? 'mr-2' : undefined)
 const Button: FC<ButtonProps> = ({ onClick, title, disabled, loading }) => {
   return (
     <button
@@ -53,7 +58,11 @@ const Button: FC<ButtonProps> = ({ onClick, title, disabled, loading }) => {
       onClick={onClick}
       disabled={disabled || loading}
     >
-      {loading && <Spinner />}
+      {loading && (
+        <span className={spinnerContainer(title)}>
+          <Spinner />
+        </span>
+      )}
       {title}
     </button>
   )
