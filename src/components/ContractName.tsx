@@ -15,7 +15,7 @@ function ContractNameComponent({ address }: { address: string }) {
   )
 }
 
-export default function ContractName({ address }: { address: string }) {
+export default function ({ address }: { address: string }) {
   return (
     <Suspense
       fallback={<>{truncateMiddleIfNeeded(address, maxAddressLength)}</>}

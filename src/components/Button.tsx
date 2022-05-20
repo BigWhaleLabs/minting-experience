@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import {
   alignItems,
   backgroundColor,
@@ -15,7 +14,6 @@ import {
   opacity,
   outlineStyle,
   padding,
-  space,
   textColor,
 } from 'classnames/tailwind'
 import Spinner from 'components/Spinner'
@@ -51,7 +49,7 @@ const button = (disabled?: boolean, loading?: boolean) =>
     disabled || loading ? cursor('cursor-not-allowed') : undefined
   )
 const spinnerContainer = (title?: string) => margin(title ? 'mr-2' : undefined)
-const Button: FC<ButtonProps> = ({ onClick, title, disabled, loading }) => {
+export default function ({ onClick, title, disabled, loading }: ButtonProps) {
   return (
     <button
       className={button(disabled, loading)}
@@ -67,5 +65,3 @@ const Button: FC<ButtonProps> = ({ onClick, title, disabled, loading }) => {
     </button>
   )
 }
-
-export default Button

@@ -1,4 +1,3 @@
-import { FC } from 'react'
 import { Suspense } from 'react'
 import EnsStore from 'stores/EnsStore'
 import maxAddressLength from 'helpers/maxAddressLength'
@@ -11,7 +10,7 @@ function EnsAddressSuspender({ address }: { address: string }) {
   return <>{truncateMiddleIfNeeded(ensNameOrAddress, maxAddressLength)}</>
 }
 
-const EnsAddress: FC<{ address: string }> = ({ address }) => {
+export default function ({ address }: { address: string }) {
   EnsStore.fetchEnsName(address)
 
   return (
@@ -22,5 +21,3 @@ const EnsAddress: FC<{ address: string }> = ({ address }) => {
     </Suspense>
   )
 }
-
-export default EnsAddress

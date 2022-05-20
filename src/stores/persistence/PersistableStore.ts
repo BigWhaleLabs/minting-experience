@@ -2,14 +2,12 @@ import { subscribe } from 'valtio'
 import SequreLS from 'secure-ls'
 import env from 'helpers/env'
 
-if (!env.VITE_ENCRYPT_KEY) throw 'Missing env variable for "VITE_ENCRYPT_KEY"'
-
 const ls = new SequreLS({
   encodingType: 'des',
   isCompression: false,
   encryptionSecret: env.VITE_ENCRYPT_KEY as string,
 })
-export default class PersistableStore {
+export default class {
   reviver = (_: string, value: unknown) => value
   replacer = (_: string, value: unknown) => value
 
