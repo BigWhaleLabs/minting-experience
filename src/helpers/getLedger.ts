@@ -10,10 +10,18 @@ export default async function (sealCredLedger: SealCredLedger) {
     QUERY_BLOCK_LIMIT
   )
   const ledger = {} as Ledger
+  const addressToMerkle: { [address: string]: string } = {}
+
   for (const event of events) {
-    const { tokenAddress } = event.args
-    const merkleRoot = event.args.merkleRoot
-    ledger[tokenAddress] = getLedgerRecord(tokenAddress, merkleRoot)
+    const { tokenAddress, merkleRoot } = event.args
+    addressToMerkle[tokenAddress] = merkleRoot
+  }
+
+  for (const tokenAddress in addressToMerkle) {
+    ledger[tokenAddress] = await getLedgerRecord(
+      tokenAddress,
+      addressToMerkle[tokenAddress]
+    )
   }
   return ledger
 }
