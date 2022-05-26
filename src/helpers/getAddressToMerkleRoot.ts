@@ -28,14 +28,14 @@ export default async function (sealCredLedger: SealCredLedger) {
     QUERY_BLOCK_LIMIT
   )
 
-  return events.reduce((addressToMerkle, event) => {
+  return events.reduce((addressToMerkleRoot, event) => {
     const {
       args: { tokenAddress, merkleRoot },
     } = sealCredLedger.interface.parseLog(event)
 
-    if (!merkleRoot) delete addressToMerkle[tokenAddress]
-    else addressToMerkle[tokenAddress] = merkleRoot
+    if (!merkleRoot) delete addressToMerkleRoot[tokenAddress]
+    else addressToMerkleRoot[tokenAddress] = merkleRoot
 
-    return addressToMerkle
+    return addressToMerkleRoot
   }, {} as AddressToMerkleRootMap)
 }

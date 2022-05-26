@@ -4,14 +4,14 @@ import getAddressToMerkleRoot from 'helpers/getAddressToMerkleRoot'
 import getLedgerRecord from 'helpers/getLedgerRecord'
 
 export default async function (sealCredLedger: SealCredLedger) {
-  const addressToMerkle = await getAddressToMerkleRoot(sealCredLedger)
+  const addressToMerkleRoot = await getAddressToMerkleRoot(sealCredLedger)
 
   const ledger = {} as Ledger
 
-  for (const tokenAddress in addressToMerkle) {
+  for (const tokenAddress in addressToMerkleRoot) {
     ledger[tokenAddress] = await getLedgerRecord(
       tokenAddress,
-      addressToMerkle[tokenAddress]
+      addressToMerkleRoot[tokenAddress]
     )
   }
   return ledger
