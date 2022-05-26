@@ -1,5 +1,6 @@
 import { QUERY_BLOCK_LIMIT } from '@big-whale-labs/constants'
 import { SealCredLedger } from '@big-whale-labs/seal-cred-ledger-contract'
+import AddressToMerkleRootMap from 'models/AddressToMerkleRootMap'
 
 export default async function (sealCredLedger: SealCredLedger) {
   const setMerkleRootFilter = sealCredLedger.filters.SetMerkleRoot()
@@ -36,5 +37,5 @@ export default async function (sealCredLedger: SealCredLedger) {
     else addressToMerkle[tokenAddress] = merkleRoot
 
     return addressToMerkle
-  }, {} as { [address: string]: string })
+  }, {} as AddressToMerkleRootMap)
 }
