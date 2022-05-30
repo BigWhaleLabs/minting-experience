@@ -1,10 +1,10 @@
 import { SealCredLedger } from '@big-whale-labs/seal-cred-ledger-contract'
+import { getAddressesToMerkleRoot } from '@big-whale-labs/frontend-utils'
 import Ledger from 'models/Ledger'
-import getAddressToMerkleRoot from 'helpers/getAddressToMerkleRoot'
 import getLedgerRecord from 'helpers/getLedgerRecord'
 
 export default async function (sealCredLedger: SealCredLedger) {
-  const addressToMerkleRoot = await getAddressToMerkleRoot(sealCredLedger)
+  const addressToMerkleRoot = await getAddressesToMerkleRoot(sealCredLedger)
 
   const ledger = {} as Ledger
 

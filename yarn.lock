@@ -2884,6 +2884,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@big-whale-labs/frontend-utils@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "@big-whale-labs/frontend-utils@npm:0.0.3"
+  checksum: 1ef9813e2bc773489865769371030513cfb5093b665240e456fc41f5e1931a1d3ec564f86591cd312657f0e43d06a8a03047d6a4356fc3a904e49be4b8979b80
+  languageName: node
+  linkType: hard
+
 "@big-whale-labs/seal-cred-ledger-contract@npm:^0.0.3":
   version: 0.0.3
   resolution: "@big-whale-labs/seal-cred-ledger-contract@npm:0.0.3"
@@ -12731,6 +12738,7 @@ __metadata:
   resolution: "minting-experience@workspace:."
   dependencies:
     "@big-whale-labs/constants": ^0.0.8
+    "@big-whale-labs/frontend-utils": ^0.0.3
     "@big-whale-labs/seal-cred-ledger-contract": ^0.0.3
     "@big-whale-labs/simple-erc721": ^0.0.2
     "@coinbase/wallet-sdk": ^3.1.0
