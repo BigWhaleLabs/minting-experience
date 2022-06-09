@@ -2877,10 +2877,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@big-whale-labs/constants@npm:^0.0.10":
-  version: 0.0.10
-  resolution: "@big-whale-labs/constants@npm:0.0.10"
-  checksum: ea1eb28015e2dc06d670d89b40b545c89336394926e6b2e8ced01099aed6bb392cfb9593043fbc5aa3317501260b84ccd556b02ddc0b0767ba632a5a658f0ee8
+"@big-whale-labs/constants@npm:^0.0.11":
+  version: 0.0.11
+  resolution: "@big-whale-labs/constants@npm:0.0.11"
+  checksum: ae4c96929c83ec3a29dc5af58ac6b649e96b617c145901772f25fa1bf709b351c7e0deb7698021356dfb1fd5108172f348810e216d7d4a7339c12a45fbaf8261
   languageName: node
   linkType: hard
 
@@ -12770,7 +12770,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "minting-experience@workspace:."
   dependencies:
-    "@big-whale-labs/constants": ^0.0.10
+    "@big-whale-labs/constants": ^0.0.11
     "@big-whale-labs/seal-cred-ledger-contract": ^0.0.4
     "@big-whale-labs/simple-erc721": ^0.0.2
     "@coinbase/wallet-sdk": ^3.2.0
