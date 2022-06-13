@@ -2877,27 +2877,27 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@big-whale-labs/constants@npm:^0.0.13":
-  version: 0.0.13
-  resolution: "@big-whale-labs/constants@npm:0.0.13"
-  checksum: 1ac8fe724862571c6e1d2729c78d5a1735b85c28b10ccb56e7b67e5b3e7b0e5d16b2ca0034c433e5d3db3027f334bb3c94af3d8a6b4084bcd9eb724159c1712c
+"@big-whale-labs/constants@npm:^0.0.12":
+  version: 0.0.12
+  resolution: "@big-whale-labs/constants@npm:0.0.12"
+  checksum: b6d921d50e9755130d4b534c1e6f715a41a45bd8aef602faaaa561eaf00367b29f4500f2e303c0918bb79d0ecb18970644d1c91e295ed0d84bc83eeaee7df163
   languageName: node
   linkType: hard
 
-"@big-whale-labs/constants@npm:^0.0.5":
+"@big-whale-labs/constants@npm:^0.0.14":
+  version: 0.0.14
+  resolution: "@big-whale-labs/constants@npm:0.0.14"
+  checksum: 99ca815f30d887896e4d2df6801c1877d12e7c13c4301ce206e64b9e0c9fa0ed3861bd872e445e394a5b389a9f689390099c0abf4c64a6e9ed28171b22cc4db3
+  languageName: node
+  linkType: hard
+
+"@big-whale-labs/seal-cred-ledger-contract@npm:^0.0.5":
   version: 0.0.5
-  resolution: "@big-whale-labs/constants@npm:0.0.5"
-  checksum: 9e4222f01cfeede87da4bed0dfd408d643af48a584ff63a9fed1cd1ec94ff810e40c9fdba62268e8acebfea4443d58dd556d7154e8e72c0864fea5c2846a007b
-  languageName: node
-  linkType: hard
-
-"@big-whale-labs/seal-cred-ledger-contract@npm:^0.0.4":
-  version: 0.0.4
-  resolution: "@big-whale-labs/seal-cred-ledger-contract@npm:0.0.4"
+  resolution: "@big-whale-labs/seal-cred-ledger-contract@npm:0.0.5"
   dependencies:
-    "@big-whale-labs/constants": ^0.0.5
+    "@big-whale-labs/constants": ^0.0.12
     prompt-sync: ^4.2.0
-  checksum: aff747ca6333c002cadc5944a5035891b704a4ee29387008718f733bec6ec28d5d7837271b91a9e40699ab89f565205f3a73c21f49667b32b23d6641a221a951
+  checksum: 7550cf7333aa231e6d87819148b9e4687c1f81d2144ad85476eae229df8a2ee9388df032c3e695ee2f12e2c241b9832e7fe4d71b6658c63b0e8d6a1bec740c66
   languageName: node
   linkType: hard
 
@@ -12770,8 +12770,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "minting-experience@workspace:."
   dependencies:
-    "@big-whale-labs/constants": ^0.0.13
-    "@big-whale-labs/seal-cred-ledger-contract": ^0.0.4
+    "@big-whale-labs/constants": ^0.0.14
+    "@big-whale-labs/seal-cred-ledger-contract": ^0.0.5
     "@big-whale-labs/simple-erc721": ^0.0.2
     "@coinbase/wallet-sdk": ^3.2.0
     "@esbuild-plugins/node-globals-polyfill": ^0.1.1

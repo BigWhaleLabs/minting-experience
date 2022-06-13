@@ -64,22 +64,23 @@ function addListenersToLedgerRecord({ originalContract }: LedgerRecord) {
 }
 
 sealCred.on(
-  sealCred.filters.SetMerkleRoot(),
-  async (tokenAddress, merkleRoot) => {
+  sealCred.filters.CreateDerivativeContract(),
+  async (originalContract) => {
     const ledger = await SealCredStore.ledger
-    if (!ledger[tokenAddress]) {
-      const record = getLedgerRecord(tokenAddress, merkleRoot)
-      ledger[tokenAddress] = record
+    if (!ledger[originalContract]) {
+      const record = getLedgerRecord(originalContract)
+      ledger[originalContract] = record
       addListenersToLedgerRecord(record)
-    } else {
-      ledger[tokenAddress].merkleRoot = merkleRoot
     }
   }
 )
-sealCred.on(sealCred.filters.DeleteMerkleRoot(), async (tokenAddress) => {
-  const ledger = await SealCredStore.ledger
-  ledger[tokenAddress]?.originalContract.removeAllListeners()
-  delete ledger[tokenAddress]
-})
+sealCred.on(
+  sealCred.filters.DeleteOriginalContract(),
+  async (originalContract) => {
+    const ledger = await SealCredStore.ledger
+    ledger[originalContract]?.originalContract.removeAllListeners()
+    delete ledger[originalContract]
+  }
+)
 
 export default SealCredStore

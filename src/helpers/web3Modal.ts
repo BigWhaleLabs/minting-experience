@@ -21,7 +21,7 @@ export default new Web3Modal({
       package: WalletConnect,
       options: {
         rpc: {
-          4: env.VITE_ETH_RPC,
+          5: env.VITE_ETH_RPC,
         },
       },
     },
@@ -30,7 +30,7 @@ export default new Web3Modal({
       options: {
         appName: env.VITE_APP_NAME,
         rpc: {
-          4: env.VITE_ETH_RPC,
+          5: env.VITE_ETH_RPC,
         },
         darkMode: true,
       },
