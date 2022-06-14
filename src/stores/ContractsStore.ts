@@ -1,6 +1,7 @@
 import { BigNumber } from 'ethers'
 import { SimpleERC721 } from '@big-whale-labs/simple-erc721'
 import { proxy } from 'valtio'
+import { subscribeKey } from 'valtio/utils'
 import WalletStore from 'stores/WalletStore'
 import contracts from 'helpers/contracts'
 
@@ -46,5 +47,9 @@ for (const contract of contracts) {
     fetchBalanceOf(contract)
   })
 }
+
+subscribeKey(WalletStore, 'account', () => {
+  ContractsStore.fetchBalanceMap()
+})
 
 export default ContractsStore

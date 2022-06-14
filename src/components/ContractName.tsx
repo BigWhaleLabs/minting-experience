@@ -8,10 +8,14 @@ function ContractNameComponent({ address }: { address: string }) {
   const { contractNames } = useSnapshot(ContractsStore)
 
   return (
-    <>
+    <a
+      href={`https://goerli.etherscan.io/address/${address}`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       {contractNames[address] ||
         truncateMiddleIfNeeded(address, maxAddressLength)}
-    </>
+    </a>
   )
 }
 
