@@ -1,11 +1,11 @@
 import { Suspense } from 'react'
 import { useSnapshot } from 'valtio'
-import SealCredStore from 'stores/SealCredStore'
+import ContractsStore from 'stores/ContractsStore'
 import maxAddressLength from 'helpers/maxAddressLength'
 import truncateMiddleIfNeeded from 'helpers/truncateMiddleIfNeeded'
 
 function ContractNameComponent({ address }: { address: string }) {
-  const { contractNames } = useSnapshot(SealCredStore)
+  const { contractNames } = useSnapshot(ContractsStore)
 
   return (
     <>

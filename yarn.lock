@@ -2877,27 +2877,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@big-whale-labs/constants@npm:^0.0.12":
-  version: 0.0.12
-  resolution: "@big-whale-labs/constants@npm:0.0.12"
-  checksum: b6d921d50e9755130d4b534c1e6f715a41a45bd8aef602faaaa561eaf00367b29f4500f2e303c0918bb79d0ecb18970644d1c91e295ed0d84bc83eeaee7df163
-  languageName: node
-  linkType: hard
-
 "@big-whale-labs/constants@npm:^0.0.14":
   version: 0.0.14
   resolution: "@big-whale-labs/constants@npm:0.0.14"
   checksum: 99ca815f30d887896e4d2df6801c1877d12e7c13c4301ce206e64b9e0c9fa0ed3861bd872e445e394a5b389a9f689390099c0abf4c64a6e9ed28171b22cc4db3
-  languageName: node
-  linkType: hard
-
-"@big-whale-labs/seal-cred-ledger-contract@npm:^0.0.5":
-  version: 0.0.5
-  resolution: "@big-whale-labs/seal-cred-ledger-contract@npm:0.0.5"
-  dependencies:
-    "@big-whale-labs/constants": ^0.0.12
-    prompt-sync: ^4.2.0
-  checksum: 7550cf7333aa231e6d87819148b9e4687c1f81d2144ad85476eae229df8a2ee9388df032c3e695ee2f12e2c241b9832e7fe4d71b6658c63b0e8d6a1bec740c66
   languageName: node
   linkType: hard
 
@@ -12771,7 +12754,6 @@ __metadata:
   resolution: "minting-experience@workspace:."
   dependencies:
     "@big-whale-labs/constants": ^0.0.14
-    "@big-whale-labs/seal-cred-ledger-contract": ^0.0.5
     "@big-whale-labs/simple-erc721": ^0.0.2
     "@coinbase/wallet-sdk": ^3.2.0
     "@esbuild-plugins/node-globals-polyfill": ^0.1.1
@@ -12799,8 +12781,8 @@ __metadata:
     ethers: ^5.6.8
     fortmatic: ^2.4.0
     postcss: ^8.4.14
-    preact: ^10.7.3
-    prettier: ^2.6.2
+    preact: ^10.8.0
+    prettier: ^2.7.0
     react-scripts: ^5.0.1
     react-toastify: ^9.0.4
     rollup-plugin-node-polyfills: ^0.2.1
@@ -14627,10 +14609,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"preact@npm:^10.7.3":
-  version: 10.7.3
-  resolution: "preact@npm:10.7.3"
-  checksum: a0471da77528b9f9478c02bf60ae41754509655a19b65d9fea274a3c94c9583a7b1700e1329ee726ef6dd5307b73cf391d3f7f1b6a9ace43d71a70cd1be92737
+"preact@npm:^10.8.0":
+  version: 10.8.0
+  resolution: "preact@npm:10.8.0"
+  checksum: f9bb56f5eebf26ca28c6efbd6a31cf89224358c3cc5d273813f02794dea9605db4b449e15af9d9c4f804c48d3cf4522f990114850e51b9e17185199e174d2c2b
   languageName: node
   linkType: hard
 
@@ -14664,12 +14646,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.6.2":
-  version: 2.6.2
-  resolution: "prettier@npm:2.6.2"
+"prettier@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "prettier@npm:2.7.0"
   bin:
     prettier: bin-prettier.js
-  checksum: 48d08dde8e9fb1f5bccdd205baa7f192e9fc8bc98f86e1b97d919de804e28c806b0e6cc685e4a88211aa7987fa9668f30baae19580d87ced3ed0f2ec6572106f
+  checksum: 5b55bb1dced9d16635b83229df8e670d150890fdb343f19e8a66e610094a108e960c0f57352b3e5cdbc4eff4ef00a834406047ffcd9f20bd22a6497ba143c81f
   languageName: node
   linkType: hard
 
@@ -14756,15 +14738,6 @@ __metadata:
   dependencies:
     asap: ~2.0.6
   checksum: 89b71a56154ed7d66a73236d8e8351a9c59adddba3929ecc845f75421ff37fc08ea0c67ad76cd5c0b0d81812c7d07a32bed27e7df5fcc960c6d68b0c1cd771f7
-  languageName: node
-  linkType: hard
-
-"prompt-sync@npm:^4.2.0":
-  version: 4.2.0
-  resolution: "prompt-sync@npm:4.2.0"
-  dependencies:
-    strip-ansi: ^5.0.0
-  checksum: b14dfb7d2520f384324b49a64c033e92cf2889e34a148037d66b0b89e43f530a93344aebf57c4abe3ae4e351080e22388f7141ea0fbc56b1b9a7f152d5d4a423
   languageName: node
   linkType: hard
 

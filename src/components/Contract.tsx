@@ -1,11 +1,14 @@
-import { SimpleERC721__factory } from '@big-whale-labs/simple-erc721'
+import {
+  SimpleERC721,
+  SimpleERC721__factory,
+} from '@big-whale-labs/simple-erc721'
 import { SubheaderText } from 'components/Text'
 import { Suspense, useState } from 'react'
 import { handleError } from 'helpers/handleError'
 import { useSnapshot } from 'valtio'
 import Button from 'components/Button'
 import ContractName from 'components/ContractName'
-import SealCredStore from 'stores/SealCredStore'
+import ContractsStore from 'stores/ContractsStore'
 import WalletStore from 'stores/WalletStore'
 import classnames, {
   alignItems,
@@ -17,7 +20,6 @@ import classnames, {
   justifyContent,
   padding,
 } from 'classnames/tailwind'
-import env from 'helpers/env'
 
 const container = classnames(
   display('flex'),
@@ -30,12 +32,10 @@ const container = classnames(
   padding('p-2')
 )
 
-function MintButton({ address }: { address: string }) {
+function MintButton({ contract }: { contract: SimpleERC721 }) {
   const { account } = useSnapshot(WalletStore)
-  const { originalContractsToOwnersMaps } = useSnapshot(SealCredStore)
-  const owners = Object.values(originalContractsToOwnersMaps[address] || {})
-  const accountOwnsContract = !!account && owners.includes(account)
-  const isDosuInvites = env.VITE_DOSU_INVITES_CONTRACT_ADDRESS === address
+  const { balanceMap } = useSnapshot(ContractsStore)
+  const accountOwnsContract = balanceMap[contract.address]?.gt(0)
   const [loading, setLoading] = useState(false)
 
   return (
@@ -46,21 +46,14 @@ function MintButton({ address }: { address: string }) {
       disabled={accountOwnsContract}
       loading={loading}
       onClick={async () => {
-        if (isDosuInvites) {
-          return window.open('https://invites.dosu.io', '_blank')
-        }
         if (!WalletStore.account) {
           return WalletStore.connect()
         }
         setLoading(true)
         try {
-          const ledger = await SealCredStore.ledger
-          const ledgerRecord = ledger[address]
-          if (!ledgerRecord) throw new Error('Contract not found')
-          const { originalContract } = ledgerRecord
           if (!WalletStore.provider) throw new Error('No provider found')
           const contractWithSigner = SimpleERC721__factory.connect(
-            originalContract.address,
+            contract.address,
             WalletStore.provider.getSigner(0)
           )
           const tx = await contractWithSigner.mint()
@@ -75,14 +68,14 @@ function MintButton({ address }: { address: string }) {
   )
 }
 
-export default function ({ address }: { address: string }) {
+export default function ({ contract }: { contract: SimpleERC721 }) {
   return (
     <div className={container}>
       <SubheaderText>
-        <ContractName address={address} />
+        <ContractName address={contract.address} />
       </SubheaderText>
       <Suspense fallback={<Button loading />}>
-        <MintButton address={address} />
+        <MintButton contract={contract} />
       </Suspense>
     </div>
   )
