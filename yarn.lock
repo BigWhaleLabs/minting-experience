@@ -2877,10 +2877,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@big-whale-labs/constants@npm:^0.0.17":
-  version: 0.0.17
-  resolution: "@big-whale-labs/constants@npm:0.0.17"
-  checksum: 50a964b48fb02278ec281efa8de9026c6c86d021c7653fa24458418c93e97fa8a958d4222b6f98ad4f3e9d6beb270bfa84ad7a897f6e33f15b7c3c5ea5d263f9
+"@big-whale-labs/constants@npm:^0.0.18":
+  version: 0.0.18
+  resolution: "@big-whale-labs/constants@npm:0.0.18"
+  checksum: 07d24c651cdd2d02938d6c7dc090cae71c6fa57b4cfe588630d126faa844adbe2086fef42c92e41172d51b361df103322016739fed84ad0bed5febf751306fd1
   languageName: node
   linkType: hard
 
@@ -9801,13 +9801,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fortmatic@npm:^2.4.0":
-  version: 2.4.0
-  resolution: "fortmatic@npm:2.4.0"
-  checksum: c0556a79454a17e141db5c9fd07dfa6f975ad67f88d09353cfbb137d02036077a0acd4c455f58f3196d3eff827b0bb2508e783b7ef756249ebb326f6898bc422
-  languageName: node
-  linkType: hard
-
 "forwarded@npm:0.2.0":
   version: 0.2.0
   resolution: "forwarded@npm:0.2.0"
@@ -12772,7 +12765,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "minting-experience@workspace:."
   dependencies:
-    "@big-whale-labs/constants": ^0.0.17
+    "@big-whale-labs/constants": ^0.0.18
     "@big-whale-labs/simple-erc721": ^0.0.2
     "@coinbase/wallet-sdk": ^3.3.0
     "@esbuild-plugins/node-globals-polyfill": ^0.1.1
@@ -12798,7 +12791,6 @@ __metadata:
     eslint-plugin-valtio: ^0.4.4
     eth-rpc-errors: ^4.0.3
     ethers: ^5.6.8
-    fortmatic: ^2.4.0
     postcss: ^8.4.14
     preact: ^10.8.1
     prettier: ^2.7.1
