@@ -4661,6 +4661,12 @@ export type TGrid =
   | TGridRowEnd
   | TGap
 
+export type TGroup = 'group'
+
+export type TPeer = 'peer'
+
+export type TGrouping = TGroup | TPeer
+
 export type TPadding =
   | 'p-0'
   | 'p-1'
@@ -8355,6 +8361,11 @@ export const gridRowStart: TUtilityFunction<TGridRowStart> =
 export const gridRowEnd: TUtilityFunction<TGridRowEnd> = classnamesLib as any
 export const gap: TUtilityFunction<TGap> = classnamesLib as any
 
+//////////// Grouping Utility functions
+
+export const group: TUtilityFunction<TGroup> = classnamesLib as any
+export const peer: TUtilityFunction<TPeer> = classnamesLib as any
+
 //////////// Spacing Utility functions
 
 export const padding: TUtilityFunction<TPadding> = classnamesLib as any
@@ -8516,6 +8527,10 @@ export const flexBox: TUtilityFunction<TFlexBox> = classnamesLib as any
 
 export const grid: TUtilityFunction<TGrid> = classnamesLib as any
 
+//////////// Grouping Utility functions
+
+export const grouping: TUtilityFunction<TGrouping> = classnamesLib as any
+
 //////////// Spacing Utility functions
 
 export const spacing: TUtilityFunction<TSpacing> = classnamesLib as any
@@ -8635,6 +8650,8 @@ export const TW = {
   gridRowStart,
   gridRowEnd,
   gap,
+  group,
+  peer,
   padding,
   margin,
   space,
@@ -8725,6 +8742,7 @@ export const CN = {
   filters,
   flexBox,
   grid,
+  grouping,
   spacing,
   interactivity,
   layout,
